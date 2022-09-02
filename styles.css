@@ -1,0 +1,51 @@
+:root {
+  --primary-dark: #000000;
+  --seconday-text: #a7d129;
+}
+
+body {
+  background-color: var(--primary-dark);
+}
+
+h1 {
+  text-align: center;
+  color: var(--seconday-text);
+}
+
+.container {
+  font-size: larger;
+  width: 100%;
+}
+
+label {
+  display: block;
+  margin: auto;
+  text-align: center;
+  color: var(--seconday-text);
+}
+
+input {
+  display: block;
+  margin: auto;
+  text-align: center;
+  width: 20%;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  border-color: var(--seconday-text);
+}
+
+#check-number {
+  display: block;
+  margin: auto;
+  margin-top: 1rem;
+  background-color: var(--seconday-text);
+  border-radius: 0.5rem;
+}
+
+textarea {
+  display: block;
+  margin: auto;
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  background-color: white;
+}

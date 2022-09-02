@@ -3,28 +3,34 @@ const luckyNumber = document.querySelector("#lucky-number");
 const checkNumber = document.querySelector("#check-number");
 const output = document.querySelector("#output");
 
-checkNumber.addEventListener("click", checkIfBirthdayIsLucky);
+checkNumber.addEventListener("click", validateEnteries);
 
-function checkIfBirthdayIsLucky() {
-  const dob = dateOfBirth.value;
-  const sum = calculateSum(dob);
-
-  if(sum % luckyNumber === 0){
-    output.value = "Your birthday is lucky!"
-    console.log("Your birthday is lucky!");
+function validateEnteries() {
+  if (luckyNumber.value > 0 && dateOfBirth.value) {
+    validateDob();
   } else {
-    output.value = "Sadly, your birthday is not that lucky."
-    console.log("Sadly, your birthday is not that lucky.");
+    output.innerText = "Please enter the both details correctly!";
   }
 }
 
+function validateDob() {
+  const dob = dateOfBirth.value;
+  const sum = calculateSum(dob);
+
+  checkIfBirthdayIsLucky(sum, luckyNumber.value);
+}
 function calculateSum(dob) {
   dob = dob.replaceAll("-", "");
-
   var sum = 0;
-  for(var i=0; i<dob.length; i++){
+  for (var i = 0; i < dob.length; i++) {
     sum = sum + Number(dob.charAt(i));
   }
-
   return sum;
+}
+function checkIfBirthdayIsLucky(sum, luckyNum) {
+  if (sum % luckyNum === 0) {
+    output.innerText = "Your birthday is lucky!🚀";
+  } else {
+    output.innerText = "Sadly, your birthday is not so lucky😔";
+  }
 }
