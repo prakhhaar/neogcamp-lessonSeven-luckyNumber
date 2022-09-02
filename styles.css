@@ -49,3 +49,11 @@ textarea {
   border-radius: 0.5rem;
   background-color: white;
 }
+
+.footer {
+    position: fixed;
+    color: var(--seconday-text);
+    bottom: 0;
+    color: var(--seconday-text);
+    left: 40%;
+  }
