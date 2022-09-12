@@ -5,6 +5,7 @@ const output = document.querySelector("#output");
 
 checkNumber.addEventListener("click", validateEnteries);
 
+// Input check
 function validateEnteries() {
   if (luckyNumber.value > 0 && dateOfBirth.value) {
     validateDob();
@@ -13,12 +14,15 @@ function validateEnteries() {
   }
 }
 
+// Assembling everthing
 function validateDob() {
   const dob = dateOfBirth.value;
   const sum = calculateSum(dob);
 
   checkIfBirthdayIsLucky(sum, luckyNumber.value);
 }
+
+// Calculating the sum of DOB
 function calculateSum(dob) {
   dob = dob.replaceAll("-", "");
   var sum = 0;
@@ -27,6 +31,8 @@ function calculateSum(dob) {
   }
   return sum;
 }
+
+// Checking if birthday is lucky 
 function checkIfBirthdayIsLucky(sum, luckyNum) {
   if (sum % luckyNum === 0) {
     output.innerText = "Your birthday is lucky!🚀";
